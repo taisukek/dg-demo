@@ -1,25 +1,62 @@
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #333;
+    --light-background: #f0f0f0;
+    --white: #fff;
+    --text-color: #333;
+    --link-color: #333;
+    --link-hover-color: #007bff;
+    --border-color: #eee;
+    --section-padding-y: 60px;
+    --section-padding-x: 0;
+    --container-width: 90%;
+    --max-container-width: 1200px;
+    --grid-gap: 20px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #000;
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--white);
     overflow-x: hidden;
-    /* Keep the existing rule */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: var(--container-width);
+    max-width: var(--max-container-width);
     margin: 0 auto;
     padding: 0 15px;
 }
 
+/* ==========================================================================
+    Header Styles
+    ========================================================================== */
 header {
-    background-color: #000;
-    border-bottom: 1px solid #eee;
-    color: #fff;
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--white);
 }
 
 header .container {
@@ -31,9 +68,11 @@ header .container {
 
 header .logo img {
     height: 100px;
-    max-width: 100%;
-    /* Ensure logo scales down */
 }
+
+/* ==========================================================================
+   Navigation Styles
+   ========================================================================== */
 
 nav ul {
     list-style: none;
@@ -48,17 +87,21 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: var(--link-color);
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #007bff;
+    color: var(--link-hover-color);
 }
 
+/* ==========================================================================
+   Hero Section Styles
+   ========================================================================== */
+
 .hero-section {
-    padding: 60px 0;
-    background-color: #f0f0f0;
+    padding: var(--section-padding-y) var(--section-padding-x);
+    background-color: var(--light-background);
     text-align: left;
 }
 
@@ -73,14 +116,14 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
+/* ==========================================================================
+    Button Styles
+    ========================================================================== */
 .button {
     display: inline-block;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 60px;
-    padding-right: 70px;
-    background-color: #000;
-    color: white;
+    padding: 12px 70px 12px 60px;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -93,27 +136,30 @@ nav ul li a:hover {
 
 .button::after {
     content: "→";
-    color: #fff;
-    /* Unicode right arrow */
+    color: var(--white);
     position: absolute;
     top: 50%;
     right: 15px;
-    /* Adjust spacing as needed */
     transform: translateY(-50%);
     font-size: 1.2em;
-    /* color: white;  */
 }
 
+/* ==========================================================================
+   Section Spacing Styles
+   ========================================================================== */
 .section-spacing {
     padding: 2cm 0;
 }
 
+/* ==========================================================================
+    Section Title Styles
+    ========================================================================== */
 .section-title {
     font-size: 3rem;
     text-align: left;
     margin-bottom: 10px;
     transform: skew(-5deg);
-    color: #333;
+    color: var(--secondary-color);
 }
 
 .message-on-image {
@@ -121,7 +167,7 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 10px;
     transform: skew(-5deg);
-    color: #fff;
+    color: var(--white);
 }
 
 .mission-section .section-title,
@@ -129,14 +175,17 @@ nav ul li a:hover {
 .kpi_detail .detail-section-title h2,
 .session_detail .detail-section-title h2,
 .cvr_detail .detail-section-title h2 {
-    color: #fff;
+    color: var(--white);
 }
 
+/* ==========================================================================
+    Section Subtitle Styles
+    ========================================================================== */
 .section-subtitle {
     font-size: 1.2rem;
     text-align: left;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--secondary-color);
     margin-top: 10px;
 }
 
@@ -145,16 +194,19 @@ nav ul li a:hover {
 .kpi_detail .detail-section-title .section-subtitle,
 .session_detail .detail-section-title .section-subtitle,
 .cvr_detail .detail-section-title .section-subtitle {
-    color: #fff;
+    color: var(--white);
 }
 
+/* ==========================================================================
+   Mission Section Styles
+   ========================================================================== */
 .mission-section {
-    background-color: #000;
-    color: #fff;
-    padding: 60px 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--section-padding-y) var(--section-padding-x);
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .mission-section .container {
@@ -174,9 +226,10 @@ nav ul li a:hover {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-origin: content-box;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
@@ -191,7 +244,6 @@ nav ul li a:hover {
     transform: skew(-5deg);
 }
 
-
 .mission-text p {
     font-size: 1rem;
     line-height: 1.8;
@@ -199,10 +251,14 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* ==========================================================================
+   Service Section Styles
+   ========================================================================== */
+
 .service-section {
-    background-color: #fff;
-    color: #333;
-    padding: 60px 0;
+    background-color: var(--white);
+    color: var(--secondary-color);
+    padding: var(--section-padding-y) var(--section-padding-x);
     position: relative;
 }
 
@@ -221,52 +277,50 @@ nav ul li a:hover {
 .service-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
 }
 
 .service-item {
-    background: #fff;
+    background: var(--white);
     padding: 18px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    color: #333;
+    color: var(--secondary-color);
     position: relative;
     z-index: 1;
 }
 
 .service-item h3 {
     font-size: 1.5rem;
-    /* Larger font size for the main title */
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .service-item p.subtitle {
     font-size: 1rem;
-    /* Smaller font size for the subtitle */
     margin-bottom: 10px;
     color: #777;
-    /* Slightly lighter color for subtitle */
 }
 
 .service-item hr {
     border: 0;
-    border-top: 1px solid #eee;
-    /* Thin line */
+    border-top: 1px solid var(--border-color);
     margin: 10px 0;
 }
 
 .service-item p.description {
     font-size: 0.9rem;
-    /* Smaller font size for the description */
     line-height: 1.6;
     margin-top: 10px;
 }
 
+/* ==========================================================================
+  Growth Section Styles
+  ========================================================================== */
 .growth-section {
-    color: #fff;
-    background-color: #000;
+    color: var(--white);
+    background-color: var(--primary-color);
 }
 
 .growth-section .container {
@@ -281,27 +335,22 @@ nav ul li a:hover {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
-
 }
 
 .growth-section .growth-text h2 {
     transform: skew(-5deg);
 }
 
-.growth-section .growth-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 10px;
-    transform: skew(-5deg);
-    color: #fff;
-}
 
+/* ==========================================================================
+   Strengths Section Styles
+   ========================================================================== */
 
 .strengths-section {
     background-size: cover;
     background-position: center;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .strengths-section .strength-text {
@@ -311,18 +360,17 @@ nav ul li a:hover {
 .strengths-section .strength-text h2 {
     font-size: 3rem;
     transform: skew(-5deg);
-    color: #333;
+    color: var(--secondary-color);
 }
-
 
 .strength-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
 }
 
 .strength-item {
-    background: #fff;
+    background: var(--white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -340,10 +388,12 @@ nav ul li a:hover {
 .strength-item img {
     height: 80px;
     margin-bottom: 10px;
-    max-width: 100%;
     margin: auto;
-
 }
+
+/* ==========================================================================
+    Detail Section Styles
+    ========================================================================== */
 
 .detail-section-title {
     text-align: left;
@@ -354,19 +404,19 @@ nav ul li a:hover {
     font-size: 3rem;
     margin-bottom: 10px;
     transform: skew(-5deg);
-    color: #333;
+    color: var(--secondary-color);
 }
 
 .kpi_detail .detail-section-title h2,
 .session_detail .detail-section-title h2,
 .cvr_detail .detail-section-title h2 {
-    color: #fff;
+    color: var(--white);
 }
 
 .kpi_detail .detail-section-title .section-subtitle,
 .session_detail .detail-section-title .section-subtitle,
 .cvr_detail .detail-section-title .section-subtitle {
-    color: #fff;
+    color: var(--white);
 }
 
 .kpi_detail .detail-img,
@@ -379,45 +429,44 @@ nav ul li a:hover {
 }
 
 .kpi_detail {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .kpi_detail p,
 .session_detail p,
 .cvr_detail p {
-    color: #fff;
+    color: var(--white);
     text-align: left;
 }
 
 .session_detail {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .cvr_detail {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .kpi_detail .detail-img {
-    justify-content: flex-end !important;
+    justify-content: flex-end;
 }
 
 .session_detail .detail-img {
-    justify-content: flex-start !important;
+    justify-content: flex-start;
 }
 
 .cvr_detail .detail-img {
-    justify-content: flex-end !important;
+    justify-content: flex-end;
 }
+
 
 .kpi_detail .detail-img img,
 .session_detail .detail-img img,
 .cvr_detail .detail-img img {
     height: 200px;
-    max-width: 100%;
-    /* Ensure images scale down */
 }
 
 .mission_container,
@@ -432,19 +481,23 @@ nav ul li a:hover {
 .session_container .detail-text,
 .kpi_container .detail-text,
 .cvr_container .detail-text {
-    width: 60%;
+    width: 65%;
 }
 
 .session_container {
     flex-direction: row-reverse;
 }
 
+/* ==========================================================================
+    Client Result Section Styles
+    ========================================================================== */
+
 .clientresult-section {
     background-size: cover;
     background-position: center;
-    color: #333;
+    color: var(--secondary-color);
     text-align: left;
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .clientresult-section .container {
@@ -458,24 +511,23 @@ nav ul li a:hover {
     margin-bottom: 10px;
     transform: skew(-5deg);
     text-align: left;
-    color: #333;
+    color: var(--secondary-color);
 }
 
 .clientresult-section .section-subtitle {
     text-align: left;
-    color: #333;
+    color: var(--secondary-color);
 }
-
 
 .client-result-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
     text-align: left;
 }
 
 .result-item {
-    background: #fff;
+    background: var(--white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -497,16 +549,19 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+/* ==========================================================================
+    Contact Section Styles
+    ========================================================================== */
 .contact-section {
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: var(--light-background);
 }
 
 .contact-section h2 {
     font-size: 3rem;
     margin-bottom: 10px;
     transform: skew(-5deg);
-    color: #333;
+    color: var(--secondary-color);
 }
 
 .contact-buttons {
@@ -517,9 +572,13 @@ nav ul li a:hover {
     padding-top: 10px;
 }
 
+/* ==========================================================================
+    Footer Styles
+    ========================================================================== */
+
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--white);
     text-align: center;
     padding: 20px 0;
 }
@@ -532,26 +591,28 @@ footer .container {
 
 footer .footer-logo img {
     height: 80px;
-    max-width: 100%;
-    /* Ensure logo scales down */
 }
 
 footer p {
     margin: 0;
 }
 
-/* Menu toggle styles */
+/* ==========================================================================
+    Menu Toggle Styles
+    ========================================================================== */
+
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     font-size: 2em;
     cursor: pointer;
-    color: #fff;
+    color: var(--white);
 }
 
-/* Responsive Styles */
-
+/* ==========================================================================
+    Responsive Styles
+    ========================================================================== */
 @media (max-width: 1024px) {
 
     /* Styles for Tablet Size*/
@@ -604,9 +665,9 @@ footer p {
         top: 100px;
         left: 0;
         width: 100%;
-        background: #000;
+        background: var(--primary-color);
         display: none;
-        color: #fff;
+        color: var(--white);
         z-index: 100;
     }
 
@@ -616,7 +677,7 @@ footer p {
 
     nav ul li {
         margin: 5px 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .service-grid {
@@ -652,10 +713,8 @@ footer p {
 
     .mission-section .mission-bottom {
         margin-top: 20px;
-    }
-
-    .mission-bottom {
-        height: 300px
+        height: 300px;
+        padding: 0px;
     }
 
 
@@ -691,16 +750,9 @@ footer p {
     .section-spacing {
         padding: 1cm 0;
     }
-}
 
-.left-img {
-    display: flex;
-    justify-content: flex-start !important;
-    align-items: center !important;
-}
+    .message-on-image {
+        font-size: 2rem;
+    }
 
-.right-img {
-    display: flex;
-    justify-content: flex-end !important;
-    align-items: center !important;
 }
