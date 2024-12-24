@@ -41,6 +41,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 .container {
@@ -537,7 +538,6 @@ nav ul li a:hover {
 .result-item img {
     width: 100%;
     height: auto;
-    max-height: 200px;
 }
 
 .result-title {
@@ -721,17 +721,10 @@ footer p {
     .kpi_detail .detail-img,
     .session_detail .detail-img,
     .cvr_detail .detail-img {
-        justify-content: center !important;
         align-items: flex-start !important;
         margin-top: 60px !important;
-    }
-
-    .kpi_detail .detail-img img,
-    .session_detail .detail-img img,
-    .cvr_detail .detail-img img {
         height: 200px;
         max-width: 100%;
-        /* Ensure images scale down */
     }
 
     .mission_container,
